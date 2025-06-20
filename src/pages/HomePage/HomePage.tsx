@@ -28,7 +28,7 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className={styles.homePage}>
-      <Text variant="h1" className={styles.title}>Todo</Text>
+      <Text variant="h1" className={styles.title}>To-do</Text>
 
       <div className={styles.actions}>
         <Button 
