@@ -33,7 +33,7 @@ interface ButtonProps {
   gap?: number | string;
   style?: React.CSSProperties;
   className?: string;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export const Button: React.FC<ButtonProps> = ({
