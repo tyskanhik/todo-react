@@ -32,11 +32,12 @@ export const HomePage: React.FC = () => {
 
       <div className={styles.actions}>
         <Button 
-          text='Добавить задачу'
+          text=''
           type="button"
           icon={<img src={addIcon} alt="Добавить" />}
           iconPosition="left"
           onClick={() => navigate('/add')}
+          style={{width: '200px'}}
         />
         <TodoFilter />
       </div>
