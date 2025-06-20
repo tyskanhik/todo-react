@@ -15,8 +15,11 @@ type ButtonCustomColor = {
   backgroundColor: string;
 }
 
+type ButtonType = 'submit' | 'reset' | 'button';
+
 interface ButtonProps {
   text: string;
+  type: ButtonType;
   width?: number | string;
   height?: number | string;
   color?: ButtonColor;
@@ -29,11 +32,13 @@ interface ButtonProps {
   iconPosition?: 'left' | 'right';
   gap?: number | string;
   style?: React.CSSProperties;
+  className?: string;
   onClick?: () => void;
 }
 
 export const Button: React.FC<ButtonProps> = ({
   text,
+  type,
   width = 'auto',
   height = '44px',
   color = 'primary',
@@ -46,6 +51,7 @@ export const Button: React.FC<ButtonProps> = ({
   iconPosition,
   gap = '5px',
   style,
+  className,
   onClick
 }) => {
   const buttonStyle = {
@@ -70,13 +76,16 @@ export const Button: React.FC<ButtonProps> = ({
   const buttonClasses = classNames(
     styles.button,
     styles[`button--${color}`],
-    disabled ? styles['button--disabled'] : ''
+    disabled ? styles['button--disabled'] : '',
+    className
   )
 
   return (
     <button 
+      type={type}
       style={buttonStyle}
       className={buttonClasses}
+      onClick={onClick}
       >
       {icon && iconPosition === 'left' && (
         <span className={styles.iconLeft}>{icon}</span>

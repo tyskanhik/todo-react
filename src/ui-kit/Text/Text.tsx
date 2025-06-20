@@ -23,6 +23,7 @@ interface TextProps {
   size?: number | string;
   align?: 'left' | 'center' | 'right';
   style?: React.CSSProperties;
+  className?: string;
   children: React.ReactNode;
   onClick?: () => void;
 }
@@ -34,6 +35,7 @@ export const Text: React.FC<TextProps> = ({
   size,
   align = 'center',
   style,
+  className,
   children,
   onClick
 }) => {
@@ -53,10 +55,10 @@ export const Text: React.FC<TextProps> = ({
     styles.text,
     styles[`text--${variant}`],
     styles[`text--${weight}`],
-    styles[`text--align${align}`]
+    styles[`text--align-${align}`],
+    className
   )
   
-
   return (
     <Tag 
       style={textStyle}

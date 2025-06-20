@@ -1,0 +1,50 @@
+.homePage {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: var(--color-text);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  gap: 1.5rem;
+}
+
+.emptyText {
+  color: var(--color-text-secondary);
+}
+
+.addButton {
+  background-color: var(--color-primary);
+  // padding: 0 30px !important;
+  
+  &:hover {
+    background-color: var(--color-primary-hover);
+  }
+}
+
+.todoContainer {
+  margin-top: 1.5rem;
+}
+
+.subtitle {
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.todoList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
